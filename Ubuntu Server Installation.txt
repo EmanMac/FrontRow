@@ -1,0 +1,80 @@
+https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-server#0
+
+1. Overview
+Ubuntu Server is Ubuntu tailored for networks and services, and it's just as capable sharing files on your home network as it is running within a Hadoop cluster.
+
+Unlike the installation of Ubuntu Desktop, Ubuntu Server does not include a graphical installation program. Instead, it uses a console menu-based process. If you'd rather install the desktop version, take a look at our Install Ubuntu desktop tutorial.
+
+This guide will provide an overview of the installation from either a DVD or a USB flash drive, suitable for anyone with an interest in running their own server. For a more detailed guide on Ubuntu Server's capabilities and its configuration, take a look at our Ubuntu Server help documentation.
+
+2. Requirements
+You'll need to consider the following before starting the installation:
+
+Ensure you have at least 2GB of free storage space.
+Have access to either a DVD or a USB flash drive containing the version of Ubuntu Server you want
+to install.
+If you're going to install Ubuntu Server alongside data you wish to keep, ensure you have a recent backup.
+See Installation/System Requirements for more specific details on hardware requirements. We also have several tutorials that explain how to create an Ubuntu DVD or USB flash drive.
+
+3. Boot from DVD
+To trigger the installation process, perform the following:
+
+Put the Ubuntu DVD into your DVD drive.
+Restart your computer.
+A few moments later, a large ‘Language' menu will appear and selecting your language will take you to the boot menu.
+
+4. Boot from USB flash drive
+Most computers will boot from USB automatically. Simply insert the USB flash drive and either power on your computer or restart it. You should see the same language menu we saw in the previous ‘Install from DVD' step, followed by the boot menu.
+
+If your computer doesn't automatically boot from USB, try holding F12 when your computer first starts. With most machines, this will allow you to select the USB device from a system-specific boot menu.
+
+F12 is the most common key for bringing up your system's boot menu, but Escape, F10 and F2 are common alternatives. If you're unsure, look for a brief message when your system starts - this will often inform you of which key to press to bring up the boot menu.
+
+5. Boot options
+The Ubuntu Server boot menu includes handy options for testing your system and for testing the validity of the install media and system disks.
+
+There are two options for installation, and you should select ‘Install Ubuntu Server'.
+
+6. Network configuration
+After selecting installation language, geographical location and keyboard layout, the installer will perform some background configuration and processing. In particular, the installer will attempt to automatically configure your network.
+
+If the installer successfully detects your network configuration, you'll be asked to enter a hostname, which can either be modified or left as the default ‘ubuntu'.
+
+7. User configuration
+After networking, you'll be asked to enter your full name, username and password. As you're configuring a server that's likely to be accessible from the internet (if you choose), make sure your password is strong and difficult to guess.
+
+8. Storage configuration
+After answering a question about your time zone, you need to configure local storage.
+
+If the storage connected to your server is raw and unformatted, the installer will detect this and present a menu offering four options. The simplest is the second, ‘Guided - use entire disk and set up LVM', and we'd recommend selecting this.
+
+Any of these options will obviously destroy any data currently on your partition(s), but resizing and creating new partitions are options available by selecting ‘Manual'.
+
+9. Package retrieval
+After accepting the changes that are going to be made to your storage, the installer will determine the packages to be installed. This will take a few moments.
+
+You will then be asked to enter an HTTP proxy address. This can be ignored if you don't know whether you need one to access the internet from your server. You'll also be asked whether you require automatic updates. Selecting ‘Install security updates automatically' is the safest default option.
+
+10. Software selection
+The final step before installation starts requires you to select the software you want pre-installed on your server. You can select from a broad set of categories or manually choose the packages yourself. This option is purely for convenience, as you can easily install any additional software you need after installation has completed.
+
+We'd recommend selecting ‘standard system utilities' and ‘OpenSSH server' as a minimum so that your system is both fully functional and accessible from any SSH client on your local network.
+
+11. Installation
+Ubuntu Server will now be installed. When complete, one final question asks for permission to install the GRUB boot loader. You should answer ‘Yes'.
+
+The installer will finish up by installing the final packages and configuration files.
+
+12. Installation complete
+Congratulations! With the installation complete, you can now remove your installation media, restart your machine and begin enjoying Ubuntu Server.
+
+If you're looking for a place to start with your new server, we'd recommend reading the Server Guide.
+
+Alternatively, alongside its vast array of industry defining applications and services, use your fresh installation to take a look at some of Canonical's most advanced technologies:
+
+MAAS - Metal as a Service, offers complete automation of your physical servers for amazing data centre operational efficiency.
+Landscape, our cost-effective way to support and monitor large and growing networks of desktops, servers and clouds.
+
+Here's a server managment guide I threw in there. https://help.ubuntu.com/lts/serverguide/?_ga=2.166457598.17152754.1522730241-973882701.1522730241
+
+And a guide for getting the server up and functioning, they even mention the advantage of using a raspberry pi. https://www.pcworld.com/article/3184925/linux/how-to-have-a-linux-home-server-on-the-cheap.html
