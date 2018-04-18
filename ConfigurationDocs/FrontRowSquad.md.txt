@@ -1,0 +1,49 @@
+This is following the instructions on
+ https://www.linuxbabe.com/ubuntu/install-configure-prosody-xmpp-server-ubuntu-16-04-17-04
+
+sudo systemnctl start prosody -starts the service
+sudo systemctl stop prosody. - stops service. 
+sydo systemctl enable prosody -enables at boot. 
+sudo systemctl disable prosody -disables auto boot.
+
+I did not mess with the modules enabled. 
+
+I have the ssl set to localhost. when I did a sudo ls -l
+on the srever it looked like a symbolic link pointed to 
+another file so I assume that one works. My guess is that 
+another team got it working and a symbolic link was created. 
+
+
+I set c2s_requre_encryption and s2s_secure_auth to true,
+to enforce client to server and server to server encryption. 
+
+I am skipping the BOSH steps for now.
+
+I set up two admins so far inside the cfg file. 
+emanmac@sootsplash.csci2461.com
+mannd00@sootsplash.csci2461.com
+
+Skipping the allowing for registration from XMPP segment for now.
+
+Under the virtual host I changed the host from just csci2461.com to sootsplash.csci2461.com
+also changed the ssl key from /etc/prosody/certs/example.com.key
+to /etc/prosody/certs/localhost.key
+and the cert from /etc/prosody/certs/example.com.crt
+to /etc/prosody/certs/localhost.crt
+
+ran sudo luac -p /etc/prosody/prosody.cfg.lua
+No error messages popped up so I assume nothing is wrong so far.
+A quick online search tells me no messages are displayed if the files passes the integrity test.
+https://linux.die.net/man/1/luac
+
+restarted the service
+sudo systemctl restart prosody
+
+Creating users
+I tried to create a user with 
+sudo prosodyctl adduser emanmac@chat.sootsplash.csci2461.com
+"The host chat.sootsplash.csci2461.com' is not listed in the configuration file, the user will not be able to log in until this is changed. 
+I changed the virtualhost to chat.sootsplash...
+
+
+
