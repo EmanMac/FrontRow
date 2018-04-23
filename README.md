@@ -1,14 +1,22 @@
 # FrontRow
-
-
-
 ## Prosody Chat Server
 
-Ports:
+### Host Location
 
-1. 5222 TCP     XMPP client connection (RFC 6120)        Official  
-2. 5223 TCP     XMPP client connection over SSL          Unofficial
-3. 5269 TCP     XMPP server connection (RFC 6120)        Official
-4. 5298 TCP UDP XMPP JEP-0174: Link-Local Messaging /    Official
-5. 8010 TCP     XMPP File transfers                      Unofficial  
+| Provider      | URL                     | IP             |
+| ------------- |-------------------------| ---------------|
+| DigitalOcean  | sootsplash.csci2461.com | 167.99.232.136 |
 
+# Ports
+
+| Ports            | TCP/UDP                  |         Specific Settings                |
+| ---------------  | ------------------------ | ---------------------------------------- | 
+| 5222/5223        | TCP                      | XMPP client                              |
+| 5269             | TCP                      | XMPP server                              |
+| 25565            | TCP                      | Java Server                   
+
+# IPTable rules
+1. -A INPUT -p tcp -m state --state NEW --dport 5222 -j ACCEPT
+2. -A INPUT -p tcp -m state --state NEW --dport 5223 -j ACCEPT
+3. -A INPUT -p tcp -m state --state NEW --dport 5269 -j ACCEPT
+4. -A INPUT -p tcp -m state --state NEW --dport 25565 -j ACCEPT
