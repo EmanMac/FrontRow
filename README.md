@@ -1,6 +1,8 @@
 # FrontRow
 ## Prosody Chat Server
 
+Prosody uses the XMPP protocol. Defined in (RFC 6120)[https://tools.ietf.org/html/rfc6120] 
+
 ### Host Location
 
 | Provider      | URL                     | IP             |
